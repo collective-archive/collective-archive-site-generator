@@ -23,6 +23,7 @@ templates = findTemplates('./templates');
 renderIndex(outputOptions);
 
 extractor(connectionInfo, retrievalOptions, function(err, type, thing) {
+  console.log(JSON.stringify(thing));
   processData(type, thing, outputOptions);
 });
 
