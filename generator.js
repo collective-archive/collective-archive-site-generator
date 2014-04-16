@@ -20,6 +20,8 @@ outputOptions = {
 
 templates = findTemplates('./templates');
 
+renderIndex(outputOptions);
+
 extractor(connectionInfo, retrievalOptions, function(err, type, thing) {
   processData(type, thing, outputOptions);
 });
@@ -43,6 +45,16 @@ function processData(type, data, options) {
   else if(type == 'entity') {
     renderEntity(data, options);
   }
+}
+
+function renderIndex(options) {
+  partial = templates["_index.html.ejs"]
+  content = ejs.render(partial, {});
+  page    = render(content);
+  filename = options.target + '/index.html', page;
+
+  fs.writeFileSync(filename, page);
+  console.log('Wrote: ' + filename);
 }
 
 function renderObject(data, options) {
