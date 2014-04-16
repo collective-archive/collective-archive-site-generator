@@ -1,0 +1,29 @@
+{
+  "author": "Chris Geihsler <chris@geihsler.net>",
+  "name": "collective-archive-site-generator",
+  "description": "A utility to generate the Collective Archive site.",
+  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/collective-archive/collective-archive-site-generator"
+  },
+  "main": "./generate.js",
+  "scripts": {},
+  "dependencies": {
+    "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git",
+    "ejs": "1.0.0",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "hint-hint": "~0.3.0",
+    "load-grunt-tasks": "~0.1.0",
+    "time-grunt": "~0.2.7",
+    "grunt-jasmine-node": "~0.2.1",
+    "grunt": "^0.4.4"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=0.10"
+  },
+  "preferGlobal": "true",
+  "bin": {}
+}
