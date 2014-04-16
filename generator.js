@@ -49,8 +49,7 @@ function processData(type, data, options) {
 }
 
 function renderIndex(options) {
-  partial = templates["_index.html.ejs"]
-  content = ejs.render(partial, {});
+  content = renderPartial("_index.html.ejs", {});
   page    = render(content);
   filename = options.target + '/index.html', page;
 
@@ -59,8 +58,7 @@ function renderIndex(options) {
 }
 
 function renderObject(data, options) {
-  partial = templates["_object.html.ejs"]
-  content = ejs.render(partial, data);
+  content = renderPartial("_object.html.ejs", data);
   page    = render(content);
   filename = options.target + '/objects/' + data.id + '.html', page;
 
@@ -69,13 +67,18 @@ function renderObject(data, options) {
 }
 
 function renderEntity(data, options) {
-  partial = templates["_entity.html.ejs"]
-  content = ejs.render(partial, data);
+  content = renderPartial("_entity.html.ejs", data);
   page    = render(content);
   filename = options.target + '/entities/' + data.id + '.html', page;
 
   fs.writeFileSync(filename, page);
   console.log('Wrote: ' + filename);
+}
+
+function renderPartial(templateName, data) {
+  partial = templates[templateName]
+  data    = _.extend(data, { filename: './templates/' + templateName });
+  return ejs.render(partial, data);
 }
 
 function render(content) {

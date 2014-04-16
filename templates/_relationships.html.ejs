@@ -1,0 +1,18 @@
+<ul>
+  <% for(var i=0; i < relationships.length; i++) {
+    var relationship = relationships[0];
+    var plural = "";
+
+    if(relationship.type === "object") {
+      plural = "objects";
+    }
+
+    if(relationship.type === "entity") {
+      plural = "entities";
+    }
+
+  %>
+    <li><a href='/<%= plural %>/<%= relationship.id %>.html'> <%= relationship.label %> </a> (<%= relationship.relationship %>) </li>
+  <% } %>
+</ul>
+
