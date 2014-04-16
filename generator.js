@@ -14,10 +14,14 @@ retrievalOptions = {
   entities: [1],
 };
 
+outputOptions = {
+  target: './output'
+};
+
 templates = findTemplates('./templates');
 
 extractor(connectionInfo, retrievalOptions, function(err, type, thing) {
-  processData(type, thing, { output: './output' });
+  processData(type, thing, outputOptions);
 });
 
 function findTemplates(dir) {
@@ -41,11 +45,19 @@ function processData(type, data, options) {
   }
 }
 
-function renderObject(data) {
-  console.log('object');
+function renderObject(data, options) {
+  partial = templates["_object.html.ejs"]
+  content = ejs.render(partial, data);
+  console.log(render(content));
 }
 
-function renderEntity(data) {
-  console.log('entity');
+function renderEntity(data, options) {
+  partial = templates["_entity.html.ejs"]
+  content = ejs.render(partial, data);
+  console.log(render(content));
 }
 
+function render(content) {
+  layout = templates["layout.html.ejs"];
+  return ejs.render(layout, { content: content });
+}
