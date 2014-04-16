@@ -15,7 +15,7 @@ retrievalOptions = {
 };
 
 outputOptions = {
-  target: './output'
+  target: '../collective-archive.github.io'
 };
 
 templates = findTemplates('./templates');
