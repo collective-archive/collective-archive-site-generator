@@ -48,13 +48,21 @@ function processData(type, data, options) {
 function renderObject(data, options) {
   partial = templates["_object.html.ejs"]
   content = ejs.render(partial, data);
-  console.log(render(content));
+  page    = render(content);
+  filename = options.target + '/objects/' + data.id + '.html', page;
+
+  fs.writeFileSync(filename, page);
+  console.log('Wrote: ' + filename);
 }
 
 function renderEntity(data, options) {
   partial = templates["_entity.html.ejs"]
   content = ejs.render(partial, data);
-  console.log(render(content));
+  page    = render(content);
+  filename = options.target + '/entities/' + data.id + '.html', page;
+
+  fs.writeFileSync(filename, page);
+  console.log('Wrote: ' + filename);
 }
 
 function render(content) {
