@@ -4,4 +4,6 @@ node_js:
 before_script:
   - npm install -g grunt-cli
 after_success:
+  - chmod 0600 .travis/deploy_key.pem
+  - ssh-add .travis/deploy_key.pem
   - ./deploy.sh
