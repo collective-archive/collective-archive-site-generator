@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "WOMP"
+node generator.js
+grunt buildcontrol:pages
