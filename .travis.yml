@@ -4,6 +4,8 @@ node_js:
 before_script:
   - npm install -g grunt-cli
   - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - git config --global user.email "chris@geihsler.net"
+  - git config --global user.name "Chris Geihsler"
 after_success:
   - chmod 0600 .travis/deploy_key.pem
   - ssh-add .travis/deploy_key.pem
