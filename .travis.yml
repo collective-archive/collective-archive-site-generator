@@ -6,7 +6,7 @@ before_script:
 after_success:
   - git config --global user.email "chris@geihsler.net"
   - git config --global user.name "Collective Archive (via Travis CI)"
-  - mv .travis/deploy_key.pem ~/.ssh/id_rsa
-  - mv -fv .travis/ssh-config ~/.ssh/config
+  - cp -f .travis/deploy_key.pem ~/.ssh/id_rsa
+  - cp -f .travis/ssh-config ~/.ssh/config
   - chmod 0600 ~/.ssh/id_rsa
   - ./deploy.sh
