@@ -2,6 +2,7 @@ _         = require('underscore');
 fs        = require('fs');
 ejs       = require('ejs');
 path      = require('path')
+sh        = require('exec-sync')
 mkdirp    = require('mkdirp')
 extractor = require('collective-access-extractor')
 
@@ -22,12 +23,19 @@ outputOptions = {
 
 templates = findTemplates('./templates');
 
+copyAssets(outputOptions);
+
 renderIndex(outputOptions);
 
 extractor(connectionInfo, retrievalOptions, function(err, type, thing) {
   console.log(JSON.stringify(thing));
   processData(type, thing, outputOptions);
 });
+
+function copyAssets(options) {
+  sh("rm -rf " + options.target);
+  sh("cp -rf static " + options.target);
+}
 
 function findTemplates(dir) {
   files = fs.readdirSync(dir);
