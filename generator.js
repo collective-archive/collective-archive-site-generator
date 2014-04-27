@@ -1,6 +1,8 @@
 _         = require('underscore');
 fs        = require('fs');
 ejs       = require('ejs');
+path      = require('path')
+mkdirp    = require('mkdirp')
 extractor = require('collective-access-extractor')
 
 connectionInfo = {
@@ -15,7 +17,7 @@ retrievalOptions = {
 };
 
 outputOptions = {
-  target: '../collective-archive.github.io'
+  target: './dist'
 };
 
 templates = findTemplates('./templates');
@@ -53,6 +55,7 @@ function renderIndex(options) {
   page    = render(content);
   filename = options.target + '/index.html', page;
 
+  mkdirp.sync(path.dirname(filename));
   fs.writeFileSync(filename, page);
   console.log('Wrote: ' + filename);
 }
@@ -62,6 +65,7 @@ function renderObject(data, options) {
   page    = render(content);
   filename = options.target + '/objects/' + data.id + '.html', page;
 
+  mkdirp.sync(path.dirname(filename));
   fs.writeFileSync(filename, page);
   console.log('Wrote: ' + filename);
 }
@@ -71,6 +75,7 @@ function renderEntity(data, options) {
   page    = render(content);
   filename = options.target + '/entities/' + data.id + '.html', page;
 
+  mkdirp.sync(path.dirname(filename));
   fs.writeFileSync(filename, page);
   console.log('Wrote: ' + filename);
 }
