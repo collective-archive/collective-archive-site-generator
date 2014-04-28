@@ -1,12 +1,7 @@
 var triggerBuild = function(callback) {
-  $.get('http://collective-archive-deployer.herokuapp.com/deploy', {
-      success: function() {
-        console.log('success');
-        callback();
-      },
-      error: function() {
-        console.log('error');
-      }
+  $.get('http://collective-archive-deployer.herokuapp.com/deploy', function() {
+    console.log('success');
+    callback();
   });
 }
 
