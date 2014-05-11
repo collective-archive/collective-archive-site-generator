@@ -1,0 +1,14 @@
+{
+  "name": "collective-archive-site-generator",
+  "version": "0.0.0",
+  "authors": [
+    "Collective Archive"
+  ],
+  "description": "Collective Archive Site Generator",
+  "dependencies": {
+    "requirejs": "~2.1.8",
+    "jquery": "~1.10.2",
+    "underscore": "~1.5.2",
+    "bootstrap-sass-official": "~3.1.1+2"
+  }
+}
