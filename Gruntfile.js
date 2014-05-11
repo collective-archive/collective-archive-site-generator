@@ -56,13 +56,38 @@ module.exports = function(grunt) {
       },
       records: {
         options: {
-          collections: [{name: 'records'}],
           pages: readJsonData('records')
         },
         files: {
           'dist/': [],
         }
       },
+    },
+
+    connect: {
+      options: {
+        port: 8000,
+        livereload: 35730,
+        hostname: "0.0.0.0",
+        base: [
+          "./dist"
+        ]
+      },
+      livereload: {}
+    },
+
+    watch: {
+      livereload: {
+        options: {
+          livereload: "<%= connect.options.livereload %>"
+        },
+        files: [
+          "./dist/**/*.html",
+          "./dist/**/*.css",
+          "./dist/**/*.js",
+          "./dist/**/*.{png,jpg,jpeg,gif,webp,svg}"
+        ]
+      }
     },
 
     buildcontrol: {
@@ -81,5 +106,6 @@ module.exports = function(grunt) {
     }
   });
   grunt.loadNpmTasks('assemble');
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data'])
+  grunt.registerTask('serve',   ['connect:livereload', 'watch']);
+  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data']);
 }
