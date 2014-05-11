@@ -2,8 +2,28 @@
 module.exports = function(grunt) {
   require("time-grunt")(grunt);
   require("load-grunt-tasks")(grunt);
+  require("./prepare_data")(grunt);
+
+  function readJsonData(name) {
+    var filename = './src/data/' + name + '.json';
+
+    if (!grunt.file.exists(filename)) {
+      return '{}';
+    }
+
+    return grunt.file.readJSON(filename);
+  };
 
   grunt.initConfig({
+    prepare_data: {
+      options: {
+      },
+      records: {
+        files: {
+          './src/data/records.json': [ './src/data/records/**/*.json' ],
+        }
+      }
+    },
 
     assemble: {
       options: {
@@ -23,28 +43,7 @@ module.exports = function(grunt) {
       records: {
         options: {
           collections: [{name: 'records'}],
-          pages: {
-            '/entities/1':  {
-              data: {
-                displayName: 'Entity',
-                addresses: [ { address1: 'Address 1 - Entity' } ],
-                relationships: [ { type: 'object', id: 1, label: 'object' } ]
-              },
-              content: '{{> _entity this }}'
-            },
-            '/objects/1':  {
-              data: {
-                displayName: 'Object',
-                addresses: [ { address1: 'Address 1 - Object' } ],
-                relationships: [ { type: 'entity', id: 1, label: 'entity' } ],
-                measurements: {
-                  height: '10 cm',
-                  width: '30 cm'
-                }
-              },
-              content: '{{> _object this }}'
-            }
-          }
+          pages: readJsonData('records')
         },
         files: {
           'dist/': [],

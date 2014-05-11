@@ -1,5 +1,7 @@
 node_modules
 
+src/data
+
 output
 dist
 !dist/assets

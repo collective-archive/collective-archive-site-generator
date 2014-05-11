@@ -15,10 +15,8 @@ retrievalOptions = {
 };
 
 outputOptions = {
-  target: './src/data'
+  target: './src/data/records'
 };
-
-buildIndex(outputOptions);
 
 extractor(connectionInfo, retrievalOptions, function(err, type, thing) {
   buildRecords(type, thing, outputOptions);
@@ -31,15 +29,6 @@ function buildRecords(type, data, options) {
   else if(type == 'entity') {
     buildEntity(data, options);
   }
-}
-
-function buildIndex(options) {
-  json = JSON.stringify({});
-  filename = options.target + '/index.json';
-
-  mkdirp.sync(path.dirname(filename));
-  fs.writeFileSync(filename, json);
-  console.log('Wrote: ' + filename);
 }
 
 function buildObject(data, options) {
