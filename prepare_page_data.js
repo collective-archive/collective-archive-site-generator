@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         //TODO: make this be actual Assemble.io front matter
         front_matter: {
           name: contents.displayName,
-          url:  url
+          url:  url + '.html'
         },
         data: contents,
         content: partial
