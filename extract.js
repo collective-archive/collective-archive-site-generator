@@ -10,7 +10,7 @@ connectionInfo = {
 };
 
 retrievalOptions = {
-  objects:  [1, 3],
+  objects:  [1, 2, 3],
   entities: [2, 3, 4],
 };
 
