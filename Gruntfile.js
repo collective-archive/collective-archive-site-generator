@@ -1,21 +1,45 @@
 'use strict';
 module.exports = function(grunt) {
-  // Show elapsed time after tasks run
   require("time-grunt")(grunt);
-  // Load all Grunt tasks
   require("load-grunt-tasks")(grunt);
 
   grunt.initConfig({
 
-    jasmine_node: {
+    assemble: {
       options: {
-        forceExit: true,
-        match: '.',
-        matchall: false,
-        extensions: 'js',
-        specNameMatcher: 'spec',
       },
-      all: ['spec/']
+      content: {
+        options: {
+          layout: './templates/layout.hbs',
+          partials: ['./templates/**/*.hbs' ],
+          helpers: './helpers/**/*.js',
+          pages: {
+            '/entities/1':  {
+              data: { 
+                displayName: 'Entity',
+                addresses: [ { address1: 'Address 1 - Entity' } ],
+                relationships: [ { type: 'object', id: 1, label: 'object' } ]
+              },
+              content: '{{> _entity this }}'
+            },
+            '/objects/1':  {
+              data: { 
+                displayName: 'Object',
+                addresses: [ { address1: 'Address 1 - Object' } ],
+                relationships: [ { type: 'entity', id: 1, label: 'entity' } ],
+                measurements: {
+                  height: '10 cm',
+                  width: '30 cm'
+                }
+              },
+              content: '{{> _object this }}'
+            }
+          }
+        },
+        files: {
+          'dist/': [],
+        }
+      },
     },
 
     buildcontrol: {
@@ -34,4 +58,5 @@ module.exports = function(grunt) {
     }
   });
   grunt.registerTask('default', ['jasmine_node'])
+  grunt.loadNpmTasks('assemble');
 }

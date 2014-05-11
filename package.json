@@ -13,7 +13,8 @@
     "ejs": "1.0.0",
     "underscore": "^1.6.0",
     "mkdirp": "^0.4.0",
-    "exec-sync": "^0.1.6"
+    "exec-sync": "^0.1.6",
+    "assemble": "^0.4.37"
   },
   "devDependencies": {
     "hint-hint": "~0.3.0",

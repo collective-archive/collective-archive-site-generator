@@ -1,0 +1,8 @@
+<ul>
+  {{#each relationships }}
+    <li>
+      <a href='{{ relationshipUrl this}}'>{{ relationship.label }}</a>
+      ({{ relationship.relationship }})
+    </li>
+  {{/each }}
+</ul>

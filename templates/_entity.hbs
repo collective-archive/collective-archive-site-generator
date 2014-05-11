@@ -1,0 +1,16 @@
+<h1>{{ displayName }}</h1>
+
+<div class='row'>
+  {{#with addresses }}
+    {{#with [0] }}
+      {{ address1 }},
+      {{ city }}
+      {{ stateprovince }}
+      {{ postalcode }}
+      {{ country }}
+    {{/with}}
+  {{/with}}
+</div>
+
+<h4>Related:</h4>
+{{> _relationships this }}
