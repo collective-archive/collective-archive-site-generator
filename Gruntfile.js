@@ -2,6 +2,7 @@
 module.exports = function(grunt) {
   require("time-grunt")(grunt);
   require("load-grunt-tasks")(grunt);
+  require("./extract_from_archive")(grunt);
   require("./prepare_page_data")(grunt);
 
   function readJsonData(name) {
@@ -15,9 +16,22 @@ module.exports = function(grunt) {
   };
 
   grunt.initConfig({
-    prepare_page_data: {
+    extract_from_archive: {
       options: {
+        connection: {
+          url:      'http://archive.collectivearchivepgh.org/',
+          username: 'api',
+          password: 'api123'
+        },
+        records: {
+          objects:  [1, 2, 3],
+          entities: [2, 3, 4]
+        },
+        dest: './src/data/records'
       },
+    },
+
+    prepare_page_data: {
       records: {
         files: {
           './src/data/records.json': [ './src/data/records/**/*.json' ],
