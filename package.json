@@ -20,7 +20,8 @@
     "hint-hint": "~0.3.0",
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.2.7",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "grunt-contrib-compass": "^0.7.2"
   },
   "optionalDependencies": {},
   "engines": {

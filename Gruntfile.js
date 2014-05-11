@@ -64,6 +64,21 @@ module.exports = function(grunt) {
       },
     },
 
+    compass: {
+      options: {
+        require: ["sass-globbing", "bootstrap-sass"],
+        bundleExec: true,
+        sassDir: "src/styles",
+        cssDir: "dist/styles",
+        javascriptsDir: "src/scripts",
+        relativeAssets: false,
+        outputStyle: "expanded",
+        importPath: "src/bower_components",
+        raw: "extensions_dir = \"src/bower_components\"\n"
+      },
+      dist: {}
+    },
+
     connect: {
       options: {
         port: 8000,
@@ -77,6 +92,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      compass: {
+        files: ["src/styles/**/*.{scss,sass}"],
+        tasks: ["compass:dist"]
+      },
       livereload: {
         options: {
           livereload: "<%= connect.options.livereload %>"
@@ -107,5 +126,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('serve',   ['connect:livereload', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data']);
+  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'compass']);
 }
