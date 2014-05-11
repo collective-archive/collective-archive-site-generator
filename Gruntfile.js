@@ -7,15 +7,25 @@ module.exports = function(grunt) {
 
     assemble: {
       options: {
+        layout: './src/templates/layout.hbs',
+        partials: ['./src/templates/**/*.hbs' ],
+        helpers: './src/helpers.js',
       },
-      content: {
+      index: {
         options: {
-          layout: './templates/layout.hbs',
-          partials: ['./templates/**/*.hbs' ],
-          helpers: './helpers/**/*.js',
+          flatten: true,
+          data:  './src/data/index.json'
+        },
+        files: {
+          'dist/': [ './src/templates/index.hbs'],
+        }
+      },
+      records: {
+        options: {
+          collections: [{name: 'records'}],
           pages: {
             '/entities/1':  {
-              data: { 
+              data: {
                 displayName: 'Entity',
                 addresses: [ { address1: 'Address 1 - Entity' } ],
                 relationships: [ { type: 'object', id: 1, label: 'object' } ]
@@ -23,7 +33,7 @@ module.exports = function(grunt) {
               content: '{{> _entity this }}'
             },
             '/objects/1':  {
-              data: { 
+              data: {
                 displayName: 'Object',
                 addresses: [ { address1: 'Address 1 - Object' } ],
                 relationships: [ { type: 'entity', id: 1, label: 'entity' } ],
