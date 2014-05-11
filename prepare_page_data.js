@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       var page = {};
 
       page['/entities/' + id] = {
-        data: {},
+        data: contents,
         content: '{{> _entity this}}'
       };
 
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       var page = {};
 
       page['/objects/' + id] = {
-        data: {},
+        data: contents,
         content: '{{> _object this}}'
       };
 
