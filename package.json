@@ -8,18 +8,17 @@
   },
   "main": "./generate.js",
   "scripts": {},
-  "dependencies": {
-    "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git#e1e4c19",
-    "underscore": "^1.6.0",
-    "assemble": "^0.4.37"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-jasmine-node": "~0.2.1",
+    "grunt-build-control": "^0.1.3",
+    "assemble": "^0.4.37",
+    "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git#e1e4c19",
     "hint-hint": "~0.3.0",
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.2.7",
-    "grunt-jasmine-node": "~0.2.1",
-    "grunt": "^0.4.4",
-    "grunt-build-control": "^0.1.3"
+    "underscore": "^1.6.0"
   },
   "optionalDependencies": {},
   "engines": {
