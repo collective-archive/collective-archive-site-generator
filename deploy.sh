@@ -1,4 +1,6 @@
 #!/bin/bash
 
-node generator.js
+node extract.js
+grunt prepare_page_data
+grunt assemble
 grunt buildcontrol:pages
