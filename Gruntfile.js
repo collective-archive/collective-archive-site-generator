@@ -2,7 +2,7 @@
 module.exports = function(grunt) {
   require("time-grunt")(grunt);
   require("load-grunt-tasks")(grunt);
-  require("./prepare_data")(grunt);
+  require("./prepare_page_data")(grunt);
 
   function readJsonData(name) {
     var filename = './src/data/' + name + '.json';
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
   };
 
   grunt.initConfig({
-    prepare_data: {
+    prepare_page_data: {
       options: {
       },
       records: {

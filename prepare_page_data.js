@@ -3,7 +3,7 @@
 var _ = require('underscore');
 
 module.exports = function(grunt) {
-  grunt.registerMultiTask('prepare_data', 'Convert the extracted CA data into something that Assemble.io can use to generate pages.', function() {
+  grunt.registerMultiTask('prepare_page_data', 'Convert the extracted CA data into something that Assemble.io can use to generate pages.', function() {
     var options = this.options();
 
     function isEntity(file) {
