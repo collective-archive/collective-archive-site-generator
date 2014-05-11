@@ -9,7 +9,7 @@
   "main": "./generate.js",
   "scripts": {},
   "dependencies": {
-    "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git#9be48a8",
+    "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git#e1e4c19",
     "underscore": "^1.6.0",
     "assemble": "^0.4.37"
   },
