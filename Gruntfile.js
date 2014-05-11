@@ -80,6 +80,6 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.registerTask('default', ['jasmine_node'])
   grunt.loadNpmTasks('assemble');
+  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data'])
 }
