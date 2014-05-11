@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       index: {
         options: {
           flatten: true,
-          data:  './src/data/index.json'
+          data:  './src/data/records.json'
         },
         files: {
           'dist/': [ './src/templates/index.hbs'],
