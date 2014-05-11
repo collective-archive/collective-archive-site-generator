@@ -1,6 +1,8 @@
 #!/bin/bash
 
-grunt extract_from_archive
-grunt prepare_page_data
+grunt
+
+# Must be run separately for now because of the way options.pages is loaded
 grunt assemble
+
 grunt buildcontrol:pages
