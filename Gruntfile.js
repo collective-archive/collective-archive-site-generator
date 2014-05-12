@@ -92,10 +92,16 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      assemble: {
+        files: ["src/**/*.hbs"],
+        tasks: ["assemble"]
+      },
+
       compass: {
         files: ["src/styles/**/*.{scss,sass}"],
         tasks: ["compass:dist"]
       },
+
       livereload: {
         options: {
           livereload: "<%= connect.options.livereload %>"
