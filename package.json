@@ -21,7 +21,7 @@
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.2.7",
     "underscore": "^1.6.0",
-    "grunt-contrib-compass": "^0.7.2"
+    "grunt-sass": "^0.12.1"
   },
   "optionalDependencies": {},
   "engines": {

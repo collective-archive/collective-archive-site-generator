@@ -64,19 +64,15 @@ module.exports = function(grunt) {
       },
     },
 
-    compass: {
+    sass: {
       options: {
-        require: ["sass-globbing", "bootstrap-sass"],
-        bundleExec: true,
-        sassDir: "src/styles",
-        cssDir: "dist/styles",
-        javascriptsDir: "src/scripts",
-        relativeAssets: false,
-        outputStyle: "expanded",
-        importPath: "src/bower_components",
-        raw: "extensions_dir = \"src/bower_components\"\n"
+        includePaths: [ './src/bower_components' ]
       },
-      dist: {}
+      dist: {
+        files: {
+          './dist/styles/main.css': './src/styles/main.scss'
+        }
+      }
     },
 
     connect: {
@@ -97,9 +93,9 @@ module.exports = function(grunt) {
         tasks: ["assemble"]
       },
 
-      compass: {
+      sass: {
         files: ["src/styles/**/*.{scss,sass}"],
-        tasks: ["compass:dist"]
+        tasks: ["sass:dist"]
       },
 
       livereload: {
@@ -132,5 +128,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('serve',   ['connect:livereload', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'compass']);
+  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'sass']);
 }
