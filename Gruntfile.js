@@ -78,7 +78,7 @@ module.exports = function(grunt) {
         src: [
           './src/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js',
           './src/scripts/**/*.js',
-          '!./src/scripts/vendor'
+          '!./src/scripts/vendor/**/*.js'
         ],
         dest: './dist/scripts/main.js'
       }
