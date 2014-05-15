@@ -64,6 +64,16 @@ module.exports = function(grunt) {
       },
     },
 
+    concat: {
+      dist: {
+        src: [
+          './src/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js',
+          './src/scripts/deployer.js'
+        ],
+        dest: './dist/scripts/main.js'
+      }
+    },
+
     sass: {
       options: {
         includePaths: [ './src/bower_components' ]
@@ -93,8 +103,13 @@ module.exports = function(grunt) {
         tasks: ["assemble"]
       },
 
+      concat: {
+        files: ["src/**/*.js"],
+        tasks: ["concat:dist"]
+      },
+
       sass: {
-        files: ["src/styles/**/*.{scss,sass}"],
+        files: ["src/**/*.{scss,sass}"],
         tasks: ["sass:dist"]
       },
 
@@ -128,5 +143,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('serve',   ['connect:livereload', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'sass']);
+  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'sass', 'concat']);
 }
