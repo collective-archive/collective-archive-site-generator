@@ -64,11 +64,21 @@ module.exports = function(grunt) {
       },
     },
 
+    copy: {
+      dist: {
+        expand: true,
+        cwd:  'src/scripts/vendor',
+        src:  '*',
+        dest: 'dist/scripts/vendor/',
+      }
+    },
+
     concat: {
       dist: {
         src: [
           './src/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js',
-          './src/scripts/deployer.js'
+          './src/scripts/**/*.js',
+          '!./src/scripts/vendor'
         ],
         dest: './dist/scripts/main.js'
       }
@@ -143,5 +153,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('serve',   ['connect:livereload', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'sass', 'concat']);
+  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'sass', 'copy', 'concat']);
 }

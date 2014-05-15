@@ -6,5 +6,3 @@ src/bower_components
 .sass-cache
 
 dist
-!dist/assets
-dist.html
