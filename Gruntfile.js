@@ -5,16 +5,6 @@ module.exports = function(grunt) {
   require("./extract_from_archive")(grunt);
   require("./prepare_page_data")(grunt);
 
-  function readJsonData(name) {
-    var filename = './src/data/' + name + '.json';
-
-    if (!grunt.file.exists(filename)) {
-      return '{}';
-    }
-
-    return grunt.file.readJSON(filename);
-  };
-
   grunt.initConfig({
     extract_from_archive: {
       options: {
@@ -56,7 +46,7 @@ module.exports = function(grunt) {
       },
       records: {
         options: {
-          pages: readJsonData('records')
+          pageSource: './src/data/records.json'
         },
         files: {
           'dist/': [],
@@ -152,5 +142,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('serve',   ['connect:livereload', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'sass', 'copy', 'concat']);
+  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
 }
