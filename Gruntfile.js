@@ -23,10 +23,6 @@ module.exports = function(grunt) {
           username: 'api',
           password: 'api123'
         },
-        records: {
-          objects:  [1, 2, 3],
-          entities: [2, 3, 4]
-        },
         dest: './src/data/records'
       },
     },
