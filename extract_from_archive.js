@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     var options = this.options();
     var done    = this.async();
 
-    extractor.fetchBatch(options.connection, options.records, function(err, id, type, data) {
+    extractor.fetchAllRecords(options.connection, function(err, id, type, data) {
       if(err) {
         grunt.log.warn("Error fetching " + type + " with id: " + id);
         return;
