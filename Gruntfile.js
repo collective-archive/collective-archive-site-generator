@@ -7,6 +7,8 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
   require("./extract_from_archive")(grunt);
   require("./prepare_page_data")(grunt);
+  require("./extract_from_tumblr")(grunt);
+
   grunt.initConfig({
     extract_from_archive: {
       options: {
@@ -16,6 +18,18 @@ module.exports = function(grunt) {
           password: 'api123'
         },
         dest: './src/data/records'
+      },
+    },
+
+    extract_from_tumblr: {
+      options: {
+        url:   'collectivearchivepgh.tumblr.com',
+        connection: {
+          oauth: { consumer_key:    'vYEpk5OoqPTCijurmqs3RuaB6IdcAxLtRssEAPC6scyzE1FY3w',
+                  consumer_secret: 'uyvjz543QtiDc1poKLu7EnPUauwTQfd0ALjtUimHkePMEdksE6',
+          }
+        },
+        dest: './src/data/tumblr_posts.json'
       },
     },
 
@@ -40,10 +54,25 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/': [
+<<<<<<< HEAD
             './src/templates/index.hbs',
             './src/templates/about.hbs',
             './src/templates/testimonials.hbs',
             './src/templates/contact.hbs'
+=======
+            './src/templates/index.hbs'
+          ],
+        }
+      },
+      testimonials: {
+        options: {
+          flatten: true,
+          data:  './src/data/tumblr_posts.json'
+        },
+        files: {
+          'dist/': [
+            './src/templates/testimonials.hbs'
+>>>>>>> tumblr_posts
           ],
         }
       },
@@ -149,6 +178,11 @@ module.exports = function(grunt) {
     }
   });
   grunt.loadNpmTasks('assemble');
+<<<<<<< HEAD
   grunt.registerTask('serve',   ['configureRewriteRules', 'connect:dev', 'watch']);
   grunt.registerTask('default', ['extract_from_archive',  'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
+=======
+  grunt.registerTask('serve',   ['connect:livereload', 'watch']);
+  grunt.registerTask('default', ['extract_from_archive', 'extract_from_tumblr', 'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
+>>>>>>> tumblr_posts
 }
