@@ -2,5 +2,8 @@
   <h3>Testimonials!</h3>
 </div>
 
-<script type='text/javascript' src='http://collectivearchivepgh.tumblr.com/api/read/js'></script>
-<script type='text/javascript' src='http://collectivearchivepgh.tumblr.com/js'></script>
+{{#each tumblr_posts.posts }}
+  <div class="tumblr_posts">
+    {{{body}}}
+  </div>
+{{/each }}

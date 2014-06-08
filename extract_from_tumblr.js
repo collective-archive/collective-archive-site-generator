@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   grunt.registerTask('extract_from_tumblr', 'Extract posts from collective archive pgh tumblr.', function() {
     var options = this.options();
     var done = this.async();
+    var filename = options.dest;
 
     var url = options.url;
     var consumer_key = options.connection.consumer_key;
@@ -18,7 +19,8 @@ module.exports = function(grunt) {
         throw new Error(error);
       }
 
-      console.log(response.posts);
+      grunt.file.write(filename, JSON.stringify(response));
+      grunt.log.writeln('wrote: ' + filename);
       done();
     });
   })

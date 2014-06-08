@@ -24,8 +24,6 @@
     "grunt-sass": "^0.12.1",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-copy": "^0.5.0",
-    "tumblr.js": "0.0.4",
-    "request": "^2.36.0",
     "tumblr": "^0.4.1"
   },
   "optionalDependencies": {},

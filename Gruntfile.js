@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                   consumer_secret: 'uyvjz543QtiDc1poKLu7EnPUauwTQfd0ALjtUimHkePMEdksE6',
           }
         },
-        dest: './src/data/tumblr_posts'
+        dest: './src/data/tumblr_posts.json'
       },
     },
 
@@ -51,7 +51,17 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/': [
-            './src/templates/index.hbs',
+            './src/templates/index.hbs'
+          ],
+        }
+      },
+      testimonials: {
+        options: {
+          flatten: true,
+          data:  './src/data/tumblr_posts.json'
+        },
+        files: {
+          'dist/': [
             './src/templates/testimonials.hbs'
           ],
         }
@@ -154,5 +164,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('serve',   ['connect:livereload', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
+  grunt.registerTask('default', ['extract_from_archive', 'extract_from_tumblr', 'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
 }
