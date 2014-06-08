@@ -41,7 +41,9 @@ module.exports = function(grunt) {
         files: {
           'dist/': [
             './src/templates/index.hbs',
-            './src/templates/testimonials.hbs'
+            './src/templates/about.hbs',
+            './src/templates/testimonials.hbs',
+            './src/templates/contact.hbs'
           ],
         }
       },
