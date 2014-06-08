@@ -31,13 +31,16 @@ module.exports = function(grunt) {
         partials: ['./src/templates/**/*.hbs' ],
         helpers: './src/helpers.js',
       },
-      index: {
+      static_pages: {
         options: {
           flatten: true,
           data:  './src/data/records.json'
         },
         files: {
-          'dist/': [ './src/templates/index.hbs'],
+          'dist/': [ 
+            './src/templates/index.hbs',
+            './src/templates/testimonials.hbs'
+          ],
         }
       },
       records: {
