@@ -7,6 +7,6 @@ module.exports.register = function (Handlebars, options)  {
       return "";
     }
 
-    return new Handlebars.SafeString("/" + plural() + "/" + relationship.id + ".html");
+    return new Handlebars.SafeString("/" + plural() + "/" + relationship.id);
   });
 };

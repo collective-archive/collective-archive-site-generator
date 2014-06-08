@@ -1,10 +1,12 @@
 'use strict';
+
+var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
+
 module.exports = function(grunt) {
   require("time-grunt")(grunt);
   require("load-grunt-tasks")(grunt);
   require("./extract_from_archive")(grunt);
   require("./prepare_page_data")(grunt);
-
   grunt.initConfig({
     extract_from_archive: {
       options: {
@@ -37,7 +39,7 @@ module.exports = function(grunt) {
           data:  './src/data/records.json'
         },
         files: {
-          'dist/': [ 
+          'dist/': [
             './src/templates/index.hbs',
             './src/templates/testimonials.hbs'
           ],
@@ -88,11 +90,16 @@ module.exports = function(grunt) {
         port: 8000,
         livereload: 35730,
         hostname: "0.0.0.0",
-        base: [
-          "./dist"
-        ]
+        base: ["./dist"],
+        middleware: function(connect, options) {
+          return [rewriteRulesSnippet, connect["static"](require("path").resolve("./dist"))];
+        }
       },
-      livereload: {}
+      rules: {
+        '^/$': '/index.html',
+        '(.*)(?!\.html|\.jpg|\.css)': '$1.html'
+      },
+      dev: {}
     },
 
     watch: {
@@ -111,7 +118,7 @@ module.exports = function(grunt) {
         tasks: ["sass:dist"]
       },
 
-      livereload: {
+      dev: {
         options: {
           livereload: "<%= connect.options.livereload %>"
         },
@@ -140,6 +147,6 @@ module.exports = function(grunt) {
     }
   });
   grunt.loadNpmTasks('assemble');
-  grunt.registerTask('serve',   ['connect:livereload', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
+  grunt.registerTask('serve',   ['configureRewriteRules', 'connect:dev', 'watch']);
+  grunt.registerTask('default', ['extract_from_archive',  'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
 }
