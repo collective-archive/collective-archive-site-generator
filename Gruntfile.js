@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
   require("./extract_from_archive")(grunt);
   require("./prepare_page_data")(grunt);
+  require("./extract_from_tumblr")(grunt);
 
   grunt.initConfig({
     extract_from_archive: {
@@ -14,6 +15,18 @@ module.exports = function(grunt) {
           password: 'api123'
         },
         dest: './src/data/records'
+      },
+    },
+
+    extract_from_tumblr: {
+      options: {
+        url:   'collectivearchivepgh.tumblr.com',
+        connection: {
+          oauth: { consumer_key:    'vYEpk5OoqPTCijurmqs3RuaB6IdcAxLtRssEAPC6scyzE1FY3w',
+                  consumer_secret: 'uyvjz543QtiDc1poKLu7EnPUauwTQfd0ALjtUimHkePMEdksE6',
+          }
+        },
+        dest: './src/data/tumblr_posts'
       },
     },
 
@@ -37,7 +50,7 @@ module.exports = function(grunt) {
           data:  './src/data/records.json'
         },
         files: {
-          'dist/': [ 
+          'dist/': [
             './src/templates/index.hbs',
             './src/templates/testimonials.hbs'
           ],
