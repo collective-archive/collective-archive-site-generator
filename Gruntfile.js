@@ -54,13 +54,9 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/': [
-<<<<<<< HEAD
             './src/templates/index.hbs',
             './src/templates/about.hbs',
-            './src/templates/testimonials.hbs',
             './src/templates/contact.hbs'
-=======
-            './src/templates/index.hbs'
           ],
         }
       },
@@ -72,7 +68,6 @@ module.exports = function(grunt) {
         files: {
           'dist/': [
             './src/templates/testimonials.hbs'
->>>>>>> tumblr_posts
           ],
         }
       },
@@ -178,11 +173,6 @@ module.exports = function(grunt) {
     }
   });
   grunt.loadNpmTasks('assemble');
-<<<<<<< HEAD
   grunt.registerTask('serve',   ['configureRewriteRules', 'connect:dev', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive',  'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
-=======
-  grunt.registerTask('serve',   ['connect:livereload', 'watch']);
   grunt.registerTask('default', ['extract_from_archive', 'extract_from_tumblr', 'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
->>>>>>> tumblr_posts
 }
