@@ -123,7 +123,9 @@ module.exports = function(grunt) {
       },
       rules: {
         '^/$': '/index.html',
-        '(.*)(?!\.html|\.jpg|\.css)': '$1.html'
+        '(.*).css': '$1.css',
+        '(.*).jpg': '$1.jpg',
+        '(.*)(?!\.html)': '$1.html'
       },
       dev: {}
     },
