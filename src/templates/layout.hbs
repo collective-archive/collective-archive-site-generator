@@ -20,16 +20,60 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <ul class="nav nav-tabs">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/testimonials">Testimonials</a></li>
-      <li><a href="/contact">Contact Us</a></li>
-    </ul>
+
+<!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Collective Archive</a>
+        </div>
+      <div class="col-xs-12 col-sm-6 pull-right">
+        <form class="navbar-form" role="search">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button class="btn btn-default search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+            <input type="text" class="form-control" placeholder="Search art and artists" name="srch-term" id="srch-term">
+          </div>
+        </form>
+      </div>
+
+        <div class="navbar-collapse collapse">
+
+          <!--<ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--<ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>-->
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
     <div class='container'>
       <div class='row'>
-        <div class='span8 offset2'>
+        <div class='col-sm-12'>
           {{> body}}
         </div>
       </div>
@@ -41,6 +85,14 @@
         </button>
       </div>
     </div>
+
+    <div id="footer">
+      <div class="container">
+        <p></p>
+      </div>
+    </div>
+
+
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

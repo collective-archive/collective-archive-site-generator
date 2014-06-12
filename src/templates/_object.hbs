@@ -1,31 +1,53 @@
-<h1>{{ displayName }}</h1>
+<div class="row">
+	<div class="col-sm-6 col-md-8 text-center">
+		<!--<h4>Images:</h4>-->
+		{{> _images representations }}
+	</div>
 
-<div class='row'>
-  Material: {{ material }}
+	<div class="col-sm-6 col-md-4 meta">
+		<h1 class="displayName">{{ displayName }}</h1>
+
+		<div class="text-muted">
+			<h2 class="entity"><a href="#">Ryan Lammie</a></h2>
+			<hr class="transparent">
+			<p>
+			  <!--Work Type:-->{{ workType.workType }}
+			</p>
+
+			<p>
+			  <!--Material: --> {{ material }}
+			</p>
+
+			<p>
+			  <!--Measurements:-->{{ measurements }}
+			</p>
+
+			<!--<p>
+			  Work Type Notes: {{ workType.workTypeNotes }}
+			</p>-->
+
+			<p>
+			  <!--Culture:--> {{ culture.culture }}
+			</p>
+
+			<!--<p>
+			  Culture Notes:{{ culture.notes }}
+			</p>-->
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="ms_selah" data-size="large">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<button type="submit" class="btn btn-block btn-lg btn-outline" style="color:#666">Share <span class="glyphicon glyphicon-share"></span></button>
+
+		</div> <!--end muted-->
+	</div> <!--end col-sm-6-->
 </div>
+<hr />
+<div class="row">
+	<div class="col-xs-12">
+		<h4>About this work</h4>
+		<p class="text-muted">Work Type Notes: {{ workType.workTypeNotes }}</p>
+		<p class="text-muted">Culture Notes: {{ culture.notes }}</p>
 
-<div class='row'>
-  Measurements: {{ measurements }}
+			<h4>Related:</h4>
+			{{> _relationships relationships }}
+	</div>
 </div>
-
-<div class='row'>
-  Work Type: {{ workType.workType }}
-</div>
-
-<div class='row'>
-  Work Type Notes: {{ workType.workTypeNotes }}
-</div>
-
-<div class='row'>
-  Culture: {{ culture.culture }}
-</div>
-
-<div class='row'>
-  Culture Notes: {{ culture.notes }}
-</div>
-
-<h4>Images:</h4>
-{{> _images representations }}
-
-<h4>Related:</h4>
-{{> _relationships relationships }}
