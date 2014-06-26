@@ -19,5 +19,7 @@
 
 <hr class="transparent"/>
 
-<h4>Related:</h4>
-{{> _relationships relationships }}
+{{#if relationships.length }}
+  <h4>Related:</h4>
+  {{> _relationships relationships }}
+{{/if}}
