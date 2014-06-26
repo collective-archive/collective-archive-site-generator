@@ -16,7 +16,7 @@
     "grunt-build-control": "^0.1.3",
     "grunt-jasmine-node": "~0.2.1",
     "assemble": "git://github.com/seejee/assemble.git#read_pages_from_file_source",
-    "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git#c112a9f",
+    "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git#232c4bc",
     "hint-hint": "~0.3.0",
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.2.7",

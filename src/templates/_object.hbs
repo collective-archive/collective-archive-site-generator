@@ -7,7 +7,12 @@
     <h1 class="displayName">{{ displayName }}</h1>
 
     <div class="text-muted">
-      <h2 class="entity"><a href="#">Ryan Lammie</a></h2>
+      <h2 class="entity">
+        {{#each artists }}
+        {{> _relationshipLink this }}
+        {{/each}}
+      </h2>
+
       <hr class="transparent">
       <p>
         {{ workType.workType }}
