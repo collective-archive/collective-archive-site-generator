@@ -84,9 +84,16 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         expand: true,
-        cwd:  'src/scripts/vendor',
-        src:  '*',
-        dest: 'dist/scripts/vendor/',
+        cwd:  'src',
+        src:  [
+         'scripts/vendor/*',
+         'assets/images/*'
+        ],
+        dest: 'dist/',
+      },
+      favicon: {
+        src:  'src/assets/images/favicon.ico',
+        dest: 'dist/favicon.ico',
       }
     },
 
@@ -126,6 +133,7 @@ module.exports = function(grunt) {
         '(.*).css': '$1.css',
         '(.*).jpg': '$1.jpg',
         '(.*).js': '$1.js',
+        '(.*).ico': '$1.ico',
         '(.*)(?!\.html)': '$1.html'
       },
       dev: {}
@@ -177,5 +185,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('serve',   ['configureRewriteRules', 'connect:dev', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'extract_from_tumblr', 'prepare_page_data', 'assemble', 'sass', 'copy', 'concat']);
+  grunt.registerTask('default', ['extract_from_archive', 'extract_from_tumblr', 'prepare_page_data', 'assemble', 'sass', 'copy:dist', 'copy:favicon', 'concat']);
 }
