@@ -1,12 +1,7 @@
-<div class="jumbotron">
-  <div class="container">
-    <h3>Hello, Collective Archive!</h3>
-  </div>
-</div>
-
-<h4>Records: </h4>
-<ul>
-  {{#each records.pages }}
-    <li><a href='{{url }}'>{{ name }}</a> </li>
-  {{/each}}
-</ul>
+{{#each records.pages }}
+  <a href='{{ url }}'>
+    {{#if imgSrc }}
+      <img src='{{ imgSrc }}' />
+    {{/if}}
+  </a>
+{{/each}}

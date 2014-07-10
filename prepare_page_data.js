@@ -9,12 +9,14 @@ module.exports = function(grunt) {
       var id       = /(\d+)\.json/.exec(file)[1];
       var url      = '/' + resource +  '/' + id;
       var partial  = '{{> _' + partial + ' this}}';
+      var imgSrc   = ((contents.representations || [])[0] || {}).url
 
       return {
         //TODO: make this be actual Assemble.io front matter
         front_matter: {
-          name: contents.displayName,
-          url:  url
+          name:   contents.displayName,
+          url:    url,
+          imgSrc: imgSrc
         },
         data: contents,
         content: partial
