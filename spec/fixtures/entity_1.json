@@ -107,6 +107,13 @@
       }
     }
   ],
+  "ca_entities.gender": [
+    {
+      "none": {
+        "gender": "male"
+      }
+    }
+  ],
   "related":{
     "ca_objects":[
       {
