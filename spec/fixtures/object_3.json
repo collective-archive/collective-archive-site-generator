@@ -227,6 +227,13 @@
       }
     }
   ],
+  "ca_objects.rights": [
+    {
+      "en_US": {
+        "rights": "Copyright the artist(s)."
+      }
+    }
+  ],
   "related":{
     "ca_entities":[
       {

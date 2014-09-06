@@ -41,6 +41,7 @@ describe("Transformers", function() {
 
     expect(destination.description).toEqual('Another fine description.');
     expect(destination.creationDate).toEqual('2014');
+    expect(destination.rights).toEqual('Copyright the artist(s).');
 
     expect(destination.workType).toEqual('digital images');
     expect(destination.material).toEqual('rubber, acrylic, silicone, latex, found objects');
