@@ -84,7 +84,22 @@
       }
     }
   ],
-  "related":{
+  "ca_entities.agent_dates": [
+    {
+      "en_US": {
+        "agent_dates": "after June 23 1988",
+        "date_type": "life"
+      }
+    }
+  ],
+  "ca_entities.description": [
+    {
+      "en_US": {
+        "description": "A fine description."
+      }
+    }
+    ],
+    "related":{
     "ca_objects":[
       {
         "item_type_id":"27",
