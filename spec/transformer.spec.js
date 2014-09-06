@@ -16,7 +16,6 @@ describe("Transformers", function() {
     expect(destination.displayName).toEqual('Ryan Lammie');
 
     expect(destination.description).toEqual('A fine description.');
-
     expect(destination.website).toEqual('http://www.cmu.edu/');
 
     expect(destination.culture.length).toEqual(2);
@@ -40,6 +39,8 @@ describe("Transformers", function() {
     expect(destination.type).toEqual('work record');
     expect(destination.displayName).toEqual('OO 11 (Empiricism)');
     expect(destination.material).toEqual('rubber, acrylic, silicone, latex, found objects');
+    expect(destination.dimensions).toEqual('72.9 x 57.7 cm framed');
+
     expect(destination.relationships.length).toEqual(0);
 
     expect(destination.artists[0]).toEqual({

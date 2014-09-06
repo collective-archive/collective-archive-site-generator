@@ -193,6 +193,13 @@
       }
     }
   ],
+  "ca_objects.dimensions_display": [
+    {
+      "none": {
+        "dimensions_display": "72.9 x 57.7 cm framed"
+      }
+    }
+  ],
   "related":{
     "ca_entities":[
       {
