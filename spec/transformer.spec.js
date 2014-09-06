@@ -3,8 +3,8 @@ fixtures     = require('./fixtures/fixtures')
 
 describe("Transformers", function() {
   beforeEach(function() {
-    this.sourceEntity = JSON.parse(fixtures.entityJson);
-    this.sourceObject = JSON.parse(fixtures.objectJson);
+    this.sourceEntity = fixtures.entity;
+    this.sourceObject = fixtures.object;
   });
 
   it("can transform a single entity", function() {
