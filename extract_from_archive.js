@@ -1,7 +1,8 @@
 'use strict';
 
-var path = require('path');
-var extractor = require('collective-access-extractor');
+var path         = require('path');
+var extractor    = require('collective-access-extractor');
+var transformers = require('./lib/transformers');
 
 module.exports = function(grunt) {
   grunt.registerTask('extract_from_archive', 'Extract the raw data from Collective Archive.', function() {
@@ -20,11 +21,13 @@ module.exports = function(grunt) {
 
   function buildRecord(type, data, dest) {
     if(type === 'object') {
-      buildObject(data, dest);
+      var transformed = transformers.transformObject(data);
+      buildObject(transformed, dest);
     }
 
     if(type === 'entity') {
-      buildEntity(data, dest);
+      var transformed = transformers.transformEntity(data);
+      buildEntity(transformed, dest);
     }
   }
 
