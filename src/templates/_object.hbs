@@ -4,27 +4,19 @@
   </div>
 
   <div class="col-sm-6 col-md-4 meta">
-    <h1 class="displayName">{{ displayName }}</h1>
+    <h1 class="artwork-title">{{ displayName }}</h1>
 
     <div class="text-muted">
-      <h2 class="entity">
+      <h2 class="artist-name">
         {{#each artists }}
         {{> _relationshipLink this }}
         {{/each}}
       </h2>
 
-      <hr class="transparent">
-      <p>
-        {{ workType.workType }}
-      </p>
-
-      <p>
-        {{ material }}
-      </p>
-
-      <p>
-        {{ dimensions }}
-      </p>
+      <p> {{ creationDate }} </p>
+      <p> {{ workType }}     </p>
+      <p> {{ material }}     </p>
+      <p> {{ dimensions }}   </p>
 
       {{> _social_media }}
 
