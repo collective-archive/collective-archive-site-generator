@@ -98,8 +98,16 @@
         "description": "A fine description."
       }
     }
-    ],
-    "related":{
+  ],
+  "ca_entities.external_link": [
+    {
+      "none": {
+        "url_source": "Website",
+        "url_entry": "http://www.cmu.edu/"
+      }
+    }
+  ],
+  "related":{
     "ca_objects":[
       {
         "item_type_id":"27",

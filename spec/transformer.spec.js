@@ -17,6 +17,8 @@ describe("Transformers", function() {
 
     expect(destination.description).toEqual('A fine description.');
 
+    expect(destination.website).toEqual('http://www.cmu.edu/');
+
     expect(destination.culture.length).toEqual(2);
     expect(destination.culture[0]).toEqual('American');
     expect(destination.culture[1]).toEqual('German');
