@@ -15,6 +15,10 @@ describe("Transformers", function() {
     expect(destination.type).toEqual('individual');
     expect(destination.displayName).toEqual('Ryan Lammie');
 
+    expect(destination.culture.length).toEqual(2);
+    expect(destination.culture[0]).toEqual('American');
+    expect(destination.culture[1]).toEqual('German');
+
     expect(destination.relationships.length).toEqual(3);
     expect(destination.relationships[0]).toEqual({
         id:   '3',

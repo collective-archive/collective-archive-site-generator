@@ -72,6 +72,18 @@
       }
     }
   ],
+  "ca_entities.culture": [
+    {
+      "en_US": {
+        "culture": "American"
+      }
+    },
+    {
+      "en_US": {
+        "culture": "German"
+      }
+    }
+  ],
   "related":{
     "ca_objects":[
       {
