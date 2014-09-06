@@ -2,22 +2,18 @@ body {
   font-family: 'Helvetica Neue';
 }
 
-
-.navbar-default {
-  background-color: #fff;
-}
-
-
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 100px;
 }
+
 #footer {
   position: absolute;
   bottom: 0;
@@ -26,21 +22,6 @@ body {
   height: 100px;
   background-color: #000;
 }
-
-.displayName {
-  font-size: 1.5em;
-  font-family: 'Helvetica Neue';
-  /*text-transform: uppercase;  */
-}
-
-.entity {
-  font-size:1.2em;
-  color:#333 !important;
-  margin-top: 0px;
-  font-family: 'Helvetica Neue';
-  font-weight:normal;
-}
-
 
 h1 {
   font-size:28px;
@@ -57,7 +38,6 @@ a.muted-link:hover, a.muted-link:active {
   text-decoration: none;
 }
 
-
 .meta {
   margin-top:2em;
   font-family: Georgia, serif;
@@ -72,20 +52,11 @@ a.muted-link:hover, a.muted-link:active {
   border-color: #e7e7e7;
 }
 
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-
-  background-color: transparent;
-}
-
 .search {
   color:#999;
 }
 .btn, .form-control {
   border-radius: 0px;
-
 }
 
 .transparent {
@@ -93,14 +64,6 @@ a.muted-link:hover, a.muted-link:active {
   margin: .8em 0;
 }
 
-
 .form-control {
   border-color: #e7e7e7
 }
-
-
-.navbar {
-  margin-bottom: 40px;
-}
-
-
