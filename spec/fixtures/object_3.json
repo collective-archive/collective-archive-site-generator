@@ -207,6 +207,18 @@
       }
     }
   ],
+  "ca_objects.work_type": [
+    {
+      "none": {
+        "work_type": "digital images"
+      }
+    },
+    {
+      "none": {
+        "work_type": "electronic mail (emails)"
+      }
+    }
+  ],
   "related":{
     "ca_entities":[
       {
