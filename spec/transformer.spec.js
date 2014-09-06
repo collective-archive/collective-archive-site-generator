@@ -12,6 +12,7 @@ describe("Transformers", function() {
 
     expect(destination.id).toEqual('1');
     expect(destination.idNumber).toEqual('AG14063001_ao');
+    expect(destination.type).toEqual('individual');
     expect(destination.displayName).toEqual('Ryan Lammie');
 
     expect(destination.relationships.length).toEqual(3);
@@ -28,6 +29,7 @@ describe("Transformers", function() {
 
     expect(destination.id).toEqual('3');
     expect(destination.idNumber).toEqual('WK14063002_ao');
+    expect(destination.type).toEqual('work record');
     expect(destination.displayName).toEqual('OO 11 (Empiricism)');
     expect(destination.material).toEqual('rubber, acrylic, silicone, latex, found objects');
     expect(destination.relationships.length).toEqual(0);
