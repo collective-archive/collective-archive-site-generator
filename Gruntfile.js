@@ -5,9 +5,9 @@ var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequ
 module.exports = function(grunt) {
   require("time-grunt")(grunt);
   require("load-grunt-tasks")(grunt);
-  require("./extract_from_archive")(grunt);
-  require("./prepare_page_data")(grunt);
-  require("./extract_from_tumblr")(grunt);
+  require("./lib/extract_from_archive")(grunt);
+  require("./lib/prepare_page_data")(grunt);
+  require("./lib/extract_from_tumblr")(grunt);
 
   grunt.initConfig({
     jasmine_node: {
