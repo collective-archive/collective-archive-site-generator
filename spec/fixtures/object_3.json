@@ -200,6 +200,13 @@
       }
     }
   ],
+  "ca_objects.description": [
+    {
+      "en_US": {
+        "description": "Another fine description."
+      }
+    }
+  ],
   "related":{
     "ca_entities":[
       {
