@@ -38,7 +38,9 @@ describe("Transformers", function() {
     expect(destination.idNumber).toEqual('WK14063002_ao');
     expect(destination.type).toEqual('work record');
     expect(destination.displayName).toEqual('OO 11 (Empiricism)');
+
     expect(destination.description).toEqual('Another fine description.');
+    expect(destination.creationDate).toEqual('2014');
 
     expect(destination.workType).toEqual('digital images');
     expect(destination.material).toEqual('rubber, acrylic, silicone, latex, found objects');

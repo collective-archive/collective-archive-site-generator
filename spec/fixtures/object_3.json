@@ -219,6 +219,14 @@
       }
     }
   ],
+  "ca_objects.dates": [
+    {
+      "en_US": {
+        "dates_value": "2014",
+        "dates_type": "Creation"
+      }
+    }
+  ],
   "related":{
     "ca_entities":[
       {
