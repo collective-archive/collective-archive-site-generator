@@ -12,9 +12,10 @@
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <link rel="stylesheet" href="/styles/main.css">
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -70,9 +71,10 @@
       </div>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="/scripts/main.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js"></script>
+    <script type="text/javascript" src="/scripts/main.js"></script>
 
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -81,6 +83,16 @@
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.image-carousel').slick({
+          arrows: true,
+          dots: true,
+          adaptiveHeight: true
+        });
+      });
     </script>
   </body>
 </html>
