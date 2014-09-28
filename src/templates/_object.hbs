@@ -23,11 +23,29 @@
     </div>
   </div>
 </div>
-<hr />
-<div class="row">
-  <div class="col-xs-12">
+
+<div class="extra-information">
+  <ul class="nav nav-tabs" role="tablist">
     {{#if relationships.length }}
-      {{> _relationships relationships }}
+      <li><a href="#relationships" role="tab" data-toggle="tab">Related</a></li>
+    {{/if}}
+
+    {{#if description }}
+      <li><a href="#description" role="tab" data-toggle="tab">Description</a></li>
+    {{/if}}
+  </ul>
+
+  <div class="tab-content">
+    {{#if relationships.length }}
+      <div class="tab-pane" id="relationships">
+        {{> _relationships relationships }}
+      </div>
+    {{/if}}
+
+    {{#if description }}
+      <div class="tab-pane" id="description">
+        <p> {{ description }} </p>
+      </div>
     {{/if}}
   </div>
 </div>

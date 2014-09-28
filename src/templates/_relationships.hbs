@@ -10,16 +10,18 @@
           <h4 class="media-heading">{{ displayName }}</h4>
         </a>
 
-        <h2 class="artist-name">
-          {{#each artists }}
-          {{> _relationshipLink this }}
-          {{/each}}
-        </h2>
+        <div class="text-muted">
+          <span class="artist-name">
+            {{#each artists }}
+            {{> _relationshipLink this }}
+            {{/each}}
+          </span>
 
-        <p> {{ creationDate }} </p>
-        <p> {{ workType }}     </p>
-        <p> {{ material }}     </p>
-        <p> {{ dimensions }}   </p>
+          <p> {{ creationDate }} </p>
+          <p> {{ workType }}     </p>
+          <p> {{ material }}     </p>
+          <p> {{ dimensions }}   </p>
+        </div>
 
       </div>
     </div>

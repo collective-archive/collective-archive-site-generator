@@ -24,6 +24,18 @@
   </div>
 </div>
 
-{{#if relationships.length }}
-  {{> _relationships relationships }}
-{{/if}}
+<div class="extra-information">
+  <ul class="nav nav-tabs" role="tablist">
+    {{#if relationships.length }}
+      <li><a href="#relationships" role="tab" data-toggle="tab">Related</a></li>
+    {{/if}}
+  </ul>
+
+  <div class="tab-content">
+    {{#if relationships.length }}
+      <div class="tab-pane" id="relationships">
+        {{> _relationships relationships }}
+      </div>
+    {{/if}}
+  </div>
+</div>
