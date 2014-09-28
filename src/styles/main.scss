@@ -3,18 +3,4 @@
 @import './object.scss';
 @import './entity.scss';
 @import './testimonials.scss';
-
-.image-carousel {
-  position: relative;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  width:  80%;
-  height: 80%;
-
-  img {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+@import './image_carousel.scss';

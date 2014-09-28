@@ -1,0 +1,49 @@
+.image-carousel {
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  width:  80%;
+  height: 80%;
+
+  .image-carousel-prev, .image-carousel-next {
+    position: absolute;
+    font-size: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    z-index: 100;
+
+    &:before {
+      font-family: 'slick';
+      font-size: 20px;
+      line-height: 1;
+      opacity: 0.75;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  .image-carousel-prev {
+    top:  50%;
+    left: 10%;
+
+    &:before {
+      content: "\2190";
+    }
+  }
+
+  .image-carousel-next {
+    top:   50%;
+    right: 10%;
+
+    &:before {
+      content: "\2192";
+    }
+  }
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
