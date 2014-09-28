@@ -18,8 +18,4 @@ module.exports.register = function (Handlebars, options)  {
 
     return new Handlebars.SafeString(html);
   });
-
-  Handlebars.registerHelper('currentUrl', function ()  {
-    return Document.URL;
-  });
 };
