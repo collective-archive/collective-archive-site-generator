@@ -1,7 +1,9 @@
 {{#each records.pages }}
-  <a href='{{ url }}'>
-    {{#if imgSrc }}
-      <img src='{{ imgSrc }}' />
-    {{/if}}
-  </a>
+  {{#with data }}
+    <a href='{{ url }}'>
+      {{#if imgSrc }}
+        <img src='{{ imgSrc }}' />
+      {{/if}}
+    </a>
+  {{/with}}
 {{/each}}
