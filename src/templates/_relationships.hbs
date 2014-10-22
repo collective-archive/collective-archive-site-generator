@@ -1,9 +1,11 @@
 {{#each this }}
   {{#with fullRecord }}
     <div class="media relationship">
-      <a class="pull-left" href="{{ url }}">
-        <img class="media-object relationship-img" src="{{ imgSrc }}" alt="{{ displayName }}" />
-      </a>
+      {{#if imgSrc }}
+        <a class="pull-left" href="{{ url }}">
+          <img class="media-object relationship-img" src="{{ imgSrc }}" alt="{{ displayName }}" />
+        </a>
+      {{/if}}
 
       <div class="media-body">
         <a href="{{ url }}">
