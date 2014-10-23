@@ -50,6 +50,7 @@ describe("Transformers", function() {
     expect(destination.dimensions).toEqual('72.9 x 57.7 cm framed');
 
     expect(destination.relationships.length).toEqual(0);
+    expect(destination.copyrightHolders.length).toEqual(1);
 
     expect(destination.artists[0]).toEqual({
         id:   '1',

@@ -159,6 +159,28 @@
         "relationship_typename":"was author of",
         "relationship_type_code":"author",
         "label":"\"Origins & Gravity\": email newsletter invitation"
+      },
+      {
+        "item_type_id": "31",
+        "object_id": "69",
+        "sdatetime": null,
+        "edatetime": null,
+        "relationship_type_id": "220",
+        "idno": "WK14082906_ao",
+        "idno_sort": "WK14082906  ao          ",
+        "relation_id": "100",
+        "name": "Living the Artist Life poster (Seth Clark)",
+        "locale_id": "1",
+        "source_info": "",
+        "row_id": "1",
+        "labels": {
+          "1": "Living the Artist Life poster (Seth Clark)"
+        },
+        "_key": "relation_id",
+        "direction": "rtol",
+        "relationship_typename": "copyright",
+        "relationship_type_code": "copyright",
+        "label": "Living the Artist Life poster (Seth Clark)"
       }
     ],
     "ca_entities":[

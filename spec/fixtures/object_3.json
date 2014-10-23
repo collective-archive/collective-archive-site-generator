@@ -259,6 +259,30 @@
         "relationship_typename":"had as artist",
         "relationship_type_code":"artist",
         "label":"Ryan Lammie"
+      },
+     {
+        "item_type_id": "79",
+        "entity_id": "1",
+        "sdatetime": null,
+        "edatetime": null,
+        "relationship_type_id": "220",
+        "idno": "AG14063001_ao",
+        "idno_sort": "AG14063001  ao          ",
+        "relation_id": "90",
+        "displayname": "Ryan Lammie",
+        "locale_id": "1",
+        "surname": "Lammie",
+        "forename": "Ryan",
+        "source_info": "",
+        "row_id": "64",
+        "labels": {
+          "1": "Ryan Lammie"
+        },
+        "_key": "relation_id",
+        "direction": "ltor",
+        "relationship_typename": "copyright",
+        "relationship_type_code": "copyright",
+        "label": "Ryan Lammie"
       }
     ],
     "ca_occurrences":[
