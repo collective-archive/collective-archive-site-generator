@@ -33,6 +33,10 @@
     {{#if description }}
       <li><a href="#description" role="tab" data-toggle="tab">Description</a></li>
     {{/if}}
+
+    {{#if copyrightHolders.length }}
+      <li><a href="#copyright" role="tab" data-toggle="tab">Copyright Holders</a></li>
+    {{/if}}
   </ul>
 
   <div class="tab-content">
@@ -47,5 +51,12 @@
         <p> {{ description }} </p>
       </div>
     {{/if}}
+
+    {{#if copyrightHolders.length }}
+      <div class="tab-pane" id="copyright">
+        {{> _relationships copyrightHolders }}
+      </div>
+    {{/if}}
+
   </div>
 </div>
