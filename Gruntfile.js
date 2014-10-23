@@ -32,6 +32,16 @@ module.exports = function(grunt) {
       },
     },
 
+    fetch_raw_record: {
+      options: {
+        connection: {
+          url:      'http://archive.collectivearchivepgh.org/',
+          username: 'api',
+          password: 'api123'
+        },
+      },
+    },
+
     extract_from_tumblr: {
       options: {
         url:   'collectivearchivepgh.tumblr.com',
@@ -194,6 +204,7 @@ module.exports = function(grunt) {
       }
     }
   });
+
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('spec',   ['jasmine_node']);
   grunt.registerTask('serve',   ['configureRewriteRules', 'connect:dev', 'watch']);
