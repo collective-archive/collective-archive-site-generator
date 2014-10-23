@@ -75,9 +75,20 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/': [
-            './src/templates/index.hbs',
             './src/templates/about.hbs',
             './src/templates/contact.hbs'
+          ],
+        }
+      },
+      index: {
+        options: {
+          layout: './src/templates/index_layout.hbs',
+          flatten: true,
+          data:  './src/data/records.json'
+        },
+        files: {
+          'dist/': [
+            './src/templates/index.hbs',
           ],
         }
       },
