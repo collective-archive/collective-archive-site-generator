@@ -22,4 +22,12 @@ module.exports.register = function (Handlebars, options)  {
 
     return new Handlebars.SafeString(html);
   });
+
+  Handlebars.registerHelper('take', function (to, context, options){
+    var item = "";
+    for (var i = 0, j = to; i < j; i++) {
+        item = item + options.fn(context[i]);
+    }
+    return item;
+  });
 };

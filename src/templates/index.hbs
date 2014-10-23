@@ -1,5 +1,80 @@
-<div class="row">
-  <div class="col-sm-12 col-md-12 text-center">
-    POOOOOP
+<div class='hero-container'>
+  <div class='container'>
+    <div class="row">
+      <div class="col-md-12 text-center explore-container">
+        <div class="slider-image"></div>
+        <div class="explore">
+          <h2>Explore Pittsburgh Art</h2>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<section class="text-center about-container">
+  <div class="container">
+    <div class="about-header">
+      <h2>The Pittsburgh Collective Archive</h2>
+      <p>We aim to support small and emerging arts organizations, spaces, curators and individual creators by documenting and showcasing their activities.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="media">
+          <div class="row ">
+            <div class="media-body   col-sm-7 col-md-8  ">
+              <h4 class="media-heading"> <a href="/about">About</a></h4>
+              <p class="hidden-sm">Lorem Ipsum, lorem ipsum lorem impsum.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="media">
+          <div class="row ">
+            <div class="media-body   col-sm-7 col-md-8  ">
+              <h4 class="media-heading"> <a href="/about">About</a></h4>
+              <p class="hidden-sm">Lorem Ipsum, lorem ipsum lorem impsum.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="media">
+          <div class="row ">
+            <div class="media-body   col-sm-7 col-md-8  ">
+              <h4 class="media-heading"> <a href="/about">About</a></h4>
+              <p class="hidden-sm">Lorem Ipsum, lorem ipsum lorem impsum.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{#each records.featuredObjects }}
+          {{#with data }}
+            <div class="media featured">
+              <a href="{{ url }}">
+                <img class="media-object featured-img" src="{{ imgSrc }}" alt="{{ displayName }}" />
+              </a>
+
+              <div class="media-body">
+                <a href="{{ url }}">
+                  <h7 class="media-heading">{{ displayName }}</h4>
+                </a>
+              </div>
+            </div>
+          {{/with}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>
