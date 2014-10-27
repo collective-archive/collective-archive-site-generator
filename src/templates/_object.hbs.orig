@@ -1,64 +1,4 @@
-<!-- Portfolio Item Row -->
 <div class="row">
-
-  <div class="col-sm-8 text-center">
-    {{> _images representations }}
-  </div>
-
-  <div class="col-sm-4">
-    <h1 class="artwork-title">{{ displayName }} <br />
-      <small>
-        {{#each artists }}
-        {{> _relationshipLink this }}
-        {{/each}}
-      </small>
-    </h1>
-    <div id="details">
-      <p>  {{ creationDate }}   </p>
-      <p>  {{ workType }}       </p>
-      <p>  {{ material }}      </p>
-      <p>  {{ dimensions }}  </p>
-    </div>
-    {{> _social_media }}
-  </div>
-
-</div>
-<!-- /.row -->
-<!-- Related Projects Row -->
-
-<div class="extra-information">
-  <ul class="nav nav-tabs" role="tablist">
-    {{#if relationships.length }}
-    <li><a href="#relationships" role="tab" data-toggle="tab">Related</a></li>
-    {{/if}}
-
-    {{#if description }}
-    <li><a href="#description" role="tab" data-toggle="tab">Description</a></li>
-    {{/if}}
-  </ul>
-
-  <div class="tab-content">
-    {{#if relationships.length }}
-    <div class="tab-pane" id="relationships">
-      {{> _relationships relationships }}
-    </div>
-    {{/if}}
-
-    {{#if description }}
-    <div class="tab-pane" id="description">
-      <p> {{ description }} </p>
-    </div>
-    {{/if}}
-  </div>
-</div>
-
-
-
-
-
-
-      
-<!--<div class="row">
   <div class="col-sm-6 col-md-8 text-center">
     {{> _images representations }}
   </div>
@@ -77,6 +17,7 @@
       <p> {{ workType }}     </p>
       <p> {{ material }}     </p>
       <p> {{ dimensions }}   </p>
+
       {{> _social_media }}
 
     </div>
@@ -118,4 +59,4 @@
     {{/if}}
 
   </div>
-</div>-->
+</div>

@@ -2,6 +2,10 @@ body {
   font-family: 'Helvetica Neue';
 }
 
+.navbar {
+  margin-bottom: 80px !important;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -9,9 +13,25 @@ html {
   min-height: 100%;
 }
 
+h1 {
+  font-size: 2.1em;
+  font-family: 'Helvetica Neue';
+  font-weight: 300;
+}
+
+p {
+  color:#444;
+}
+
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 100px;
+  /*margin-bottom: 100px;*/
+}
+
+footer {
+  background-color: #333;
+  padding: 40px 0;
+  margin-top: 80px;
 }
 
 #footer {
@@ -19,12 +39,17 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 100px;
-  background-color: #000;
+  height: 50px;
+  background-color: rgb(51, 51, 51);
 }
 
-h1 {
-  font-size:28px;
+/*.row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}*/
+
+a {
+  color: #666;
 }
 
 a.muted-link {
@@ -66,4 +91,39 @@ a.muted-link:hover, a.muted-link:active {
 
 .form-control {
   border-color: #e7e7e7
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#copyright {
+  background: #222;
+  padding: 20px 0;
+  font-size: 12px;
+}
+
+#mc_embed_signup form {
+padding: 10px 0 !important;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: none;
+  color: #444;
+}
+
+.nav-tabs>li>a {
+  border-radius: 0;
+}
+
+#details p {
+  margin-bottom: 0 !important;
 }
