@@ -119,6 +119,7 @@ module.exports = function(grunt) {
         cwd:  'src',
         src:  [
          'scripts/vendor/*',
+         'styles/vendor/*',
          'assets/images/*'
         ],
         dest: 'dist/',
@@ -164,6 +165,8 @@ module.exports = function(grunt) {
         '^/$': '/index.html',
         '(.*).css': '$1.css',
         '(.*).jpg': '$1.jpg',
+        '(.*).png': '$1.png',
+        '(.*).gif': '$1.gif',
         '(.*).js': '$1.js',
         '(.*).ico': '$1.ico',
         '(.*)(?!\.html)': '$1.html'

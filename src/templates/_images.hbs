@@ -3,7 +3,9 @@
   <button type="button" class="image-carousel-button image-carousel-next">Next</button>
   {{#each this }}
     <div>
-      <img  src='{{ url }}' alt='{{id}}'/>
+      <a class='fancybox' href='{{ url }}'>
+        <img src='{{ url }}' alt='{{id}}'/>
+      </a>
     </div>
   {{/each }}
 </div>
