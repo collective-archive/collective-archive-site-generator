@@ -16,7 +16,8 @@ describe("Transformers", function() {
     expect(destination.displayName).toEqual('Ryan Lammie');
 
     expect(destination.description).toEqual('A fine description.');
-    expect(destination.website).toEqual('http://www.cmu.edu/');
+    expect(destination.website.name).toEqual('Website');
+    expect(destination.website.url).toEqual('http://www.cmu.edu/');
 
     expect(destination.gender).toEqual('male');
 
@@ -29,7 +30,8 @@ describe("Transformers", function() {
         id:   '3',
         type: 'object',
         label: 'OO 11 (Empiricism)',
-        relationship: 'was artist'
+        relationship: 'was artist',
+        fullRelationship: 'was artist'
     });
   });
 
@@ -56,7 +58,8 @@ describe("Transformers", function() {
         id:   '1',
         type: 'entity',
         label: 'Ryan Lammie',
-        relationship: 'artist'
+        relationship: 'artist',
+        fullRelationship: 'had as artist'
     });
 
     expect(destination.representations.length).toEqual(1);

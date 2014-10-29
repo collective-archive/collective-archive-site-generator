@@ -15,9 +15,11 @@
       <label>Gender</label> {{ gender }}
     </div>
 
+    {{#with website}}
     <div class='label-row'>
-      <label>URL</label> <a href='{{ website }}'>{{ website }}</a>
+      <label>{{ name}} </label> <a href='{{ url }}'>{{ url }}</a>
     </div>
+    {{/with}}
 
     {{> _social_media }}
 
