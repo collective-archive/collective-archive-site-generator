@@ -1,5 +1,4 @@
 #!/bin/bash
 
-grunt
-
+grunt rebuild
 grunt buildcontrol:pages
