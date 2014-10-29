@@ -222,5 +222,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('spec',   ['jasmine_node']);
   grunt.registerTask('serve',   ['configureRewriteRules', 'connect:dev', 'watch']);
-  grunt.registerTask('default', ['extract_from_archive', 'extract_from_tumblr', 'prepare_page_data', 'assemble', 'sass', 'copy:dist', 'copy:favicon', 'concat']);
+  grunt.registerTask('default', ['extract_from_archive', 'extract_from_tumblr', 'prepare_page_data', 'assemble', 'sass', 'copy:dist', 'copy:favicon', 'concat', 'serve']);
 }
