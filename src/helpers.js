@@ -30,4 +30,19 @@ module.exports.register = function (Handlebars, options)  {
     }
     return item;
   });
+
+  Handlebars.registerHelper('chunk', function (context, chunks, options){
+    var ret = '';
+
+    var lists = _.chain(context)
+      .groupBy(function(element, index){ return Math.floor(index/chunks); })
+      .toArray()
+      .value();
+
+    for (var i = 0; i < lists.length; i++) {
+      ret += options.fn(lists[i]);
+    }
+
+    return ret;
+  });
 };

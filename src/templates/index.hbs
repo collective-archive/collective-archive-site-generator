@@ -61,18 +61,19 @@
 
 <section class="featured-container">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        {{#each records.featuredObjects }}
-          {{#with data }}
-            <div class="media featured">
-              <a href="{{ url }}">
-                <img class="media-object featured-img" src="{{ imgSrc }}" alt="{{ displayName }}" />
-              </a>
-            </div>
-          {{/with}}
+    {{#chunk records.featuredObjects 4 }}
+      <div class="row">
+        {{#each this}}
+        {{#with data }}
+        <div class="col-xs-3">
+          <a href="{{ url }}" class="thumbnail">
+            <img class="featured-img" src="{{ imgSrc }}" alt="{{ displayName }}" />
+          </a>
+        </div>
+        {{/with}}
         {{/each}}
       </div>
+    {{/chunk}}
     </div>
   </div>
 </section>
