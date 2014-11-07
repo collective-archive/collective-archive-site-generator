@@ -53,6 +53,7 @@ describe("Transformers", function() {
 
     expect(destination.relationships.length).toEqual(0);
     expect(destination.copyrightHolders.length).toEqual(1);
+    expect(destination.isFeatured).toEqual(true);
 
     expect(destination.artists[0]).toEqual({
         id:   '1',

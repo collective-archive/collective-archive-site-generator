@@ -36,9 +36,9 @@
     "value":""
   },
   "access":{
-    "value":"0",
+    "value":"1",
     "display_text":{
-      "en_US":"not accessible to public"
+      "en_US":"accessible to public"
     }
   },
   "status":{
