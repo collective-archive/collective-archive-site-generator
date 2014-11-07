@@ -1,23 +1,25 @@
 <section>
-	<div class="container">
-		<div class="row">
-	    	<div class="col-sm-12">
-				<h1>A Project People Can Get Behind</h1>
-				<p class="lead">Why do we need the Collective Archive? Here are some answers from the community of Pittsburgh. Have something to add? <a href="/contact">Drop us a line.</a></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="tumblr_posts">
-				  {{#each tumblr_posts.posts }}
-				    <div class="tumblr_post">
-				      <div class="tumblr_text">
-				        {{{body}}}
-				      </div>
-				    </div>
-				  {{/each }}
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+        <h1>A Project People Can Get Behind</h1>
+        <p class="lead">Why do we need the Collective Archive? Here are some answers from the community of Pittsburgh. Have something to add? <a href="/contact">Drop us a line.</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    {{#chunk tumblr_posts.posts 3 }}
+      <div class="row">
+        {{#each this }}
+          <div class="col-xs-4">
+            <div class="tumblr_post thumbnail">
+              <div class="tumblr_text">
+                {{{body}}}
+              </div>
+            </div>
+          </div>
+        {{/each }}
+      </div>
+    {{/chunk}}
+  </div>
 </section>
