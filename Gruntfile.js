@@ -60,7 +60,7 @@ module.exports = function(grunt) {
         files: {
           './src/data/records.json': [ './src/data/records/**/*.json' ],
         },
-        search: './dist/scripts/search_content.json'
+        search: './dist/search_index.json'
       }
     },
 
