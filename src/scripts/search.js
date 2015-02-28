@@ -21,6 +21,7 @@ CA.Search = function() {
       ]};
 
       $('#tipue_search_input').tipuesearch({
+        show: 50,
         mode: 'json',
         contentLocation: '/scripts/search_content.json'
       });
