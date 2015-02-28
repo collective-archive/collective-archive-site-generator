@@ -46,8 +46,9 @@ module.exports = function(grunt) {
       options: {
         url:   'collectivearchivepgh.tumblr.com',
         connection: {
-          oauth: { consumer_key:    'vYEpk5OoqPTCijurmqs3RuaB6IdcAxLtRssEAPC6scyzE1FY3w',
-                  consumer_secret: 'uyvjz543QtiDc1poKLu7EnPUauwTQfd0ALjtUimHkePMEdksE6',
+          oauth: {
+            consumer_key:    'vYEpk5OoqPTCijurmqs3RuaB6IdcAxLtRssEAPC6scyzE1FY3w',
+            consumer_secret: 'uyvjz543QtiDc1poKLu7EnPUauwTQfd0ALjtUimHkePMEdksE6',
           }
         },
         dest: './src/data/tumblr_posts.json'
