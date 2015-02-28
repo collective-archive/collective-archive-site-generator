@@ -1,4 +1,6 @@
-window.SocialMedia = function() {
+window.CA = window.CA || {};
+
+CA.SocialMedia = function() {
   return {
     init: function() {
       $('.social-twitter').data('via', document.URL);

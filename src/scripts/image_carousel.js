@@ -1,4 +1,6 @@
-window.ImageCarousel = function() {
+window.CA = window.CA || {};
+
+CA.ImageCarousel = function() {
   return {
     init: function() {
       $('.image-carousel').slick({
