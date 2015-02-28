@@ -78,7 +78,8 @@ module.exports = function(grunt) {
         files: {
           'dist/': [
             './src/templates/about.hbs',
-            './src/templates/contact.hbs'
+            './src/templates/contact.hbs',
+            './src/templates/search.hbs',
           ],
         }
       },
@@ -171,7 +172,8 @@ module.exports = function(grunt) {
         '(.*).gif': '$1.gif',
         '(.*).js': '$1.js',
         '(.*).ico': '$1.ico',
-        '(.*)(?!\.html)': '$1.html'
+        '/search\?(.*)': '/search.html\?$1',
+        '(.*)(?!\.html)': '$1.html',
       },
       dev: {}
     },
