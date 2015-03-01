@@ -3,7 +3,7 @@
   {{#moreThanOne this.length }}
   <ol class="carousel-indicators">
     {{#each this }}
-      <li data-target="#image-carousel" data-slide-to="{{ index }}" class="{{ activeIfZero @index}}"></li>
+      <li data-target="#image-carousel" data-slide-to="{{ @index }}" class="{{ activeIfZero @index}}"></li>
     {{/each}}
   </ol>
   {{/moreThanOne}}
