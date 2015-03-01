@@ -11,7 +11,7 @@
   <!-- Images -->
   <div class="carousel-inner" role="listbox">
     {{#each this }}
-      <div class="item {{activeIfZero @index}}">
+      <div class="item {{activeIfZero @index}} carousel-wrapper">
         <a class='fancybox' href='{{ largeUrl }}'>
           <img src='{{ url }}' alt='{{id}}'/>
         </a>
