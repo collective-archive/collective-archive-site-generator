@@ -1,0 +1,23 @@
+<article class="media search-result">
+  <div class="pull-left media-left">
+    {{#if imgSrc}}
+      <a href="{{ url }}">
+        <img class="media-object" src="{{ imgSrc }}" alt="{{ displayName }}" />
+      </a>
+    {{/if}}
+  </div>
+
+  <div class="media-body">
+    <a href="{{ url }}">
+      <h4 class="media-heading">{{ displayName }}</h4>
+    </a>
+
+    <div class="description text-muted">
+      <p>
+        {{#if description}}
+          {{truncate description 250}}
+        {{/if}}
+      </p>
+    </div>
+  </div>
+</article>

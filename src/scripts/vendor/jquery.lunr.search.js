@@ -16,19 +16,13 @@
     };
   };
 
-  // parse a date in yyyy-mm-dd format
-  var parseDate = function(input) {
-    var parts = input.match(/(\d+)/g);
-    return new Date(parts[0], parts[1]-1, parts[2]); // months are 0-based
-  };
-
   var LunrSearch = (function() {
     function LunrSearch(elem, options) {
       this.$elem = elem;
       this.$results = $(options.results);
       this.$entries = $(options.entries, this.$results);
       this.indexDataUrl = options.indexUrl;
-      this.template = this.compileTemplate($(options.template));
+      this.render   = options.render;
 
       this.initialize();
     }
@@ -42,15 +36,6 @@
         self.populateSearchFromQuery();
         self.bindKeypress();
       });
-    };
-
-    // compile search results template
-    LunrSearch.prototype.compileTemplate = function($template) {
-      var template = $template.text();
-      Mustache.parse(template);
-      return function (view, partials) {
-        return Mustache.render(template, view, partials);
-      };
     };
 
     // load the search index data
@@ -106,7 +91,7 @@
       if (entries.length === 0) {
         $entries.append('<p>Nothing found.</p>');
       } else {
-        $entries.append(this.template({entries: entries}));
+        $entries.append(this.render(entries));
       }
 
       $results.show();
@@ -139,6 +124,6 @@
     indexUrl  : '/js/index.json',   // Url for the .json file containing search index data
     results   : '#search-results',  // selector for containing search results element
     entries   : '.entries',         // selector for search entries containing element (contained within results above)
-    template  : '#search-results-template'  // selector for Mustache.js template
+    render    : function(entries) { console.log(entries); },
   };
 })(jQuery);

@@ -23,14 +23,13 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jasmine-node": "~0.2.1",
     "grunt-sass": "^0.12.1",
+    "handlebars": "^3.0.0",
     "hint-hint": "~0.3.0",
     "load-grunt-tasks": "~0.1.0",
     "lunr": "^0.5.7",
-    "mustache": "^1.1.0",
     "time-grunt": "~0.2.7",
     "tumblr": "^0.4.1",
-    "underscore": "^1.6.0",
-    "uri": "^0.1.0"
+    "underscore": "^1.6.0"
   },
   "optionalDependencies": {},
   "engines": {

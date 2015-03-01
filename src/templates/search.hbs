@@ -1,40 +1,11 @@
 ---
 scripts:
-- /scripts/vendor/mustache.min.js
 - /scripts/vendor/jquery.deparam.min.js
 - /scripts/vendor/lunr.min.js
 - /scripts/vendor/jquery.lunr.search.js
 
 javascript: CA.Search.init();
 ---
-
-<script id="search-results-template" type="text/mustache">
-  \{{#entries}}
-    <article class="media search-result">
-      <div class="pull-left media-left">
-        \{{#imgSrc}}
-          <a href="\{{ url }}">
-            <img class="media-object" src="\{{ imgSrc }}" alt="\{{ title }}" />
-          </a>
-        \{{/imgSrc}}
-      </div>
-
-      <div class="media-body">
-        <a href="\{{ url }}">
-          <h4 class="media-heading">\{{ title }}</h4>
-        </a>
-
-        <div class="description text-muted">
-          <p>
-            \{{#description}}
-              \{{description}}
-            \{{/description}}
-          </p>
-        </div>
-      </div>
-    </article>
-  \{{/entries}}
-</script>
 
 <section>
   <div class="container">
