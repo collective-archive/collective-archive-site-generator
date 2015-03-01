@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
   require("./lib/extract_from_archive")(grunt);
   require("./lib/prepare_page_data")(grunt);
+  require("./lib/generate_search_index")(grunt);
   require("./lib/extract_from_tumblr")(grunt);
 
   grunt.initConfig({
@@ -61,6 +62,17 @@ module.exports = function(grunt) {
           './src/data/records.json': [ './src/data/records/**/*.json' ],
         },
         search: './dist/search_index.json'
+      }
+    },
+
+    generate_search_index: {
+      options: {
+        template: './src/templates/_search_result.hbs'
+      },
+      search: {
+        files: {
+          './dist/search_index.json': ['./src/data/records.json'],
+        },
       }
     },
 
@@ -180,8 +192,13 @@ module.exports = function(grunt) {
 
     watch: {
       assemble: {
-        files: ["src/**/*.hbs"],
+        files: ["src/**/*.hbs", "!src/templates/_search_result.hbs"],
         tasks: ["assemble"]
+      },
+
+      search: {
+        files: ["src/templates/_search_result.hbs"],
+        tasks: ["generate_search_index"]
       },
 
       concat: {
@@ -226,7 +243,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
   grunt.registerTask('spec',   ['jasmine_node']);
   grunt.registerTask('serve',   ['configureRewriteRules', 'connect:dev', 'watch']);
-  grunt.registerTask('build',   ['prepare_page_data', 'assemble', 'sass', 'copy:dist', 'copy:favicon', 'concat']);
+  grunt.registerTask('build',   ['prepare_page_data', 'generate_search_index', 'assemble', 'sass', 'copy:dist', 'copy:favicon', 'concat']);
   grunt.registerTask('extract_and_build', ['extract_from_archive', 'extract_from_tumblr', 'build']);
   grunt.registerTask('default', ['extract_and_build', 'serve']);
 }
