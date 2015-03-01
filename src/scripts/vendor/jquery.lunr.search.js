@@ -114,8 +114,7 @@
 
     // Populate the search input with 'q' querystring parameter if set
     LunrSearch.prototype.populateSearchFromQuery = function() {
-      var uri = new URI(window.location.search.toString());
-      var queryString = uri.search(true);
+      var queryString = deparam(window.location.search.toString().replace('?', ''));
 
       if (queryString.hasOwnProperty('q')) {
         this.$elem.val(queryString.q);
