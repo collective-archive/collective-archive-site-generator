@@ -57,4 +57,19 @@ module.exports.register = function (Handlebars, options)  {
     }
     return str;
   });
+
+  Handlebars.registerHelper('activeIfZero', function (index) {
+    if (index == 0) {
+      return new Handlebars.SafeString('active');
+    }
+    return "";
+  });
+
+  Handlebars.registerHelper('moreThanOne', function (length, options) {
+    if (length > 1) {
+      return options.fn(this);
+    }
+
+    return "";
+  });
 };

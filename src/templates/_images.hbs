@@ -1,11 +1,33 @@
-<div class="image-carousel">
-  <button type="button" class="image-carousel-button image-carousel-prev">Previous</button>
-  <button type="button" class="image-carousel-button image-carousel-next">Next</button>
-  {{#each this }}
-    <div>
-      <a class='fancybox' href='{{ largeUrl }}'>
-        <img src='{{ url }}' alt='{{id}}'/>
-      </a>
-    </div>
-  {{/each }}
+<div id="image-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  {{#moreThanOne this.length }}
+  <ol class="carousel-indicators">
+    {{#each this }}
+      <li data-target="#image-carousel" data-slide-to="{{ index }}" class="{{ activeIfZero @index}}"></li>
+    {{/each}}
+  </ol>
+  {{/moreThanOne}}
+
+  <!-- Images -->
+  <div class="carousel-inner" role="listbox">
+    {{#each this }}
+      <div class="item {{activeIfZero @index}}">
+        <a class='fancybox' href='{{ largeUrl }}'>
+          <img src='{{ url }}' alt='{{id}}'/>
+        </a>
+      </div>
+    {{/each }}
+  </div>
+
+  <!-- Controls -->
+  {{#moreThanOne this.length }}
+    <a class="left carousel-control" href="#image-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left carousel-arrow" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#image-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right carousel-arrow" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  {{/moreThanOne}}
 </div>
