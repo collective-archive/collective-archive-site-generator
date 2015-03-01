@@ -1,3 +1,13 @@
+---
+scripts:
+- /scripts/vendor/mustache.min.js
+- /scripts/vendor/URI.min.js
+- /scripts/vendor/lunr.min.js
+- /scripts/vendor/jquery.lunr.search.js
+
+javascript: CA.Search.init();
+---
+
 <script id="search-results-template" type="text/mustache">
   \{{#entries}}
     <article class="media search-result">
