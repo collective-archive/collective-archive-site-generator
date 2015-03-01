@@ -192,8 +192,13 @@ module.exports = function(grunt) {
 
     watch: {
       assemble: {
-        files: ["src/**/*.hbs", "!src/templates/_search_result.hbs"],
+        files: ["src/**/*.hbs", "!src/templates/_search_result.hbs", "!src/templates/index.hbs"],
         tasks: ["assemble"]
+      },
+
+      index: {
+        files: ["src/templates/index.hbs"],
+        tasks: ["assemble:index"]
       },
 
       search: {
