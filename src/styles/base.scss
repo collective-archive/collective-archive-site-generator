@@ -24,14 +24,16 @@ p {
 }
 
 body {
-  /* Margin bottom by footer height */
-  /*margin-bottom: 100px;*/
 }
 
 footer {
   background-color: #333;
   padding: 40px 0;
-  margin-top: 80px;
+  margin-top: 60px;
+}
+
+.main-container {
+  min-height: 400px;
 }
 
 #footer {
