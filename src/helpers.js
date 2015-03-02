@@ -72,4 +72,27 @@ module.exports.register = function (Handlebars, options)  {
 
     return "";
   });
+
+  Handlebars.registerHelper('dateWithLabel', function (entity, options) {
+    if(!entity || !entity.dates) {
+      return "";
+    }
+
+    var context = {};
+
+    if(entity.type === 'personal') {
+      context = {
+        label: 'Born',
+        date:  entity.dates.life
+      };
+    }
+    else {
+      context = {
+        label: 'Established',
+        date:  entity.dates.activity
+      };
+    }
+
+    return options.fn(context);
+  });
 };

@@ -12,12 +12,16 @@
     </div>
 
     <div class='label-row'>
-      <label>Gender</label> {{ gender }}
+      {{#dateWithLabel this}}
+        {{#if date}}
+          <label>{{label}}</label> {{ date }}
+        {{/if}}
+      {{/dateWithLabel}}
     </div>
 
     {{#with website}}
     <div class='label-row'>
-      <label>{{ name}} </label> <a href='{{ url }}'>{{ url }}</a>
+      <label>{{ name }} </label> <a href='{{ url }}'>{{ url }}</a>
     </div>
     {{/with}}
 
