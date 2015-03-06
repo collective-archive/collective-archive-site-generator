@@ -10,7 +10,9 @@
   "scripts": {
     "test": "grunt jasmine_node"
   },
-  "dependencies": {},
+  "dependencies": {
+    "speakingurl": "^0.20.1"
+  },
   "devDependencies": {
     "assemble": "git://github.com/seejee/assemble.git#read_pages_from_file_source",
     "collective-archive-extractor": "git://github.com/collective-archive/collective-access-extractor.git#c06dd94",
