@@ -1,6 +1,8 @@
 node_modules
 
+!src/data/slug_map.json
 src/data
+
 src/bower_components
 
 .sass-cache
