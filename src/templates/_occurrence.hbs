@@ -1,0 +1,48 @@
+<article data-type="{{type}}" data-record-id="{{id}}">
+  <div class='row text-left'>
+    <h1>{{ displayName }}</h1>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-7 occurrence-bio'>
+      <p class='text-justify'>{{ description }}</p>
+    </div>
+    <div class='col-md-5 occurrence-attributes'>
+      <div class='label-row'>
+      </div>
+
+      <div class='label-row'>
+        {{#dateWithLabel this}}
+          {{#if date}}
+            <label>{{label}}</label> {{ date }}
+          {{/if}}
+        {{/dateWithLabel}}
+      </div>
+
+      {{#with website}}
+      <div class='label-row'>
+        <label>{{ name }} </label> <a href='{{ url }}'>{{ url }}</a>
+      </div>
+      {{/with}}
+
+      {{> _social_media }}
+
+    </div>
+  </div>
+
+  <div class="extra-information">
+    <ul class="nav nav-tabs" role="tablist">
+      {{#if relationships.length }}
+        <li><a href="#relationships" role="tab" data-toggle="tab">Related</a></li>
+      {{/if}}
+    </ul>
+
+    <div class="tab-content">
+      {{#if relationships.length }}
+        <div class="tab-pane" id="relationships">
+          {{> _relationships relationships }}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</article>
