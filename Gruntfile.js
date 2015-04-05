@@ -184,6 +184,7 @@ module.exports = function(grunt) {
         '(.*).gif$': '$1.gif',
         '(.*).js$': '$1.js',
         '(.*).ico$': '$1.ico',
+        '(.*).json': '$1.json',
         '/search\?(.*)': '/search.html\?$1',
         '(.*)(?!\.html)': '$1.html',
       },
