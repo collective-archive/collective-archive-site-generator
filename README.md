@@ -10,6 +10,8 @@ At a high level, this application:
 - [Generates](https://github.com/collective-archive/collective-archive-site-generator/blob/master/lib/generate_search_index.js) a [lunr](http://lunrjs.com/) search index for fast, client-side full-text search.
 - [Deploys](https://github.com/collective-archive/collective-archive-site-generator/blob/master/Gruntfile.js#L233-L247) the site to Github Pages. 
 
+Handlebars templates are located [here](https://github.com/collective-archive/collective-archive-site-generator/tree/master/src/templates).
+
 It also supports local development by running a development server with live reload.
 
 Installation Instructions:
